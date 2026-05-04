@@ -1,0 +1,191 @@
+/* Conta Flow — light theme inspired by frontend light mode */
+
+:root {
+    --flow-bg: #ffffff;
+    --flow-fg: #1a1a1a;
+    --flow-fg-muted: #4a4a4a;
+    --flow-primary: #006C30;
+    --flow-secondary: #45BA76;
+    --flow-accent: #FBF4E3;
+}
+
+html, body, .reveal {
+    background: var(--flow-bg);
+    color: var(--flow-fg);
+}
+
+.reveal {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Inter",
+                 "Helvetica Neue", Arial, sans-serif;
+    font-weight: 400;
+    letter-spacing: -0.005em;
+}
+
+/* Fullscreen flowing svg layered above the white background, behind slides */
+.flow-bg {
+    position: fixed;
+    inset: 0;
+    background-image: url("assets/flow-bg-light.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.reveal .slides {
+    position: relative;
+    z-index: 1;
+}
+
+/* Headings */
+.reveal h1,
+.reveal h2,
+.reveal h3 {
+    color: var(--flow-fg);
+    font-weight: 600;
+    text-transform: none;
+    letter-spacing: -0.02em;
+    text-shadow: none;
+}
+
+.reveal h1 { font-size: 3.6rem; }
+.reveal h2 { font-size: 2.4rem; margin-bottom: 0.6em; }
+
+/* Body text */
+.reveal p,
+.reveal li {
+    color: var(--flow-fg);
+    line-height: 1.5;
+}
+
+.reveal .lead {
+    font-size: 1.4em;
+    color: var(--flow-fg-muted);
+    margin-bottom: 1em;
+}
+
+/* Lists */
+.reveal ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 auto;
+    max-width: 28em;
+    text-align: left;
+}
+
+.reveal ul li {
+    position: relative;
+    padding: 0.35em 0 0.35em 1.4em;
+    font-size: 1.1em;
+}
+
+.reveal ul li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.85em;
+    width: 0.5em;
+    height: 0.5em;
+    border-radius: 50%;
+    background: var(--flow-secondary);
+}
+
+.reveal strong {
+    color: var(--flow-primary);
+    font-weight: 600;
+}
+
+/* ===== Title slide ===== */
+
+.reveal .title-slide {
+    text-align: center;
+}
+
+.title-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.2rem;
+}
+
+.title-mark {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4em;
+    margin: 0;
+    font-size: 5.5rem;
+    font-weight: 600;
+    line-height: 1;
+}
+
+.title-mark .conta-logo {
+    height: 1em;
+    width: auto;
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0;
+    background: none;
+    border: none;
+    box-shadow: none;
+}
+
+.title-mark .flow-word {
+    color: var(--flow-fg);
+    letter-spacing: -0.025em;
+}
+
+.title-sub {
+    font-size: 1.3rem;
+    color: var(--flow-fg-muted);
+    margin: 0;
+    font-weight: 400;
+}
+
+/* ===== Static footer ===== */
+
+.flow-footer {
+    position: fixed;
+    left: 1.6rem;
+    bottom: 1.2rem;
+    display: flex;
+    align-items: center;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.flow-footer .footer-logo {
+    height: 1.4rem;
+    width: auto;
+    opacity: 1;
+    background: none;
+    border: none;
+    box-shadow: none;
+    margin: 0;
+}
+
+/* ===== Reveal chrome ===== */
+
+.reveal .controls {
+    color: var(--flow-primary);
+}
+
+.reveal .progress {
+    color: var(--flow-primary);
+    height: 3px;
+}
+
+.reveal .slide-number {
+    background: transparent;
+    color: var(--flow-fg-muted);
+    font-size: 0.7em;
+}
+
+/* Remove default reveal image styling so the logo doesn't get a border */
+.reveal section img {
+    background: none;
+    border: none;
+    box-shadow: none;
+    margin: 0;
+}
