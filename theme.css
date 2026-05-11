@@ -6,6 +6,7 @@
     --flow-fg-muted: #4a4a4a;
     --flow-primary: #006C30;
     --flow-secondary: #45BA76;
+    --flow-danger: #F44336;
     --flow-accent: #FBF4E3;
 }
 
@@ -187,4 +188,9 @@ html, body, .reveal {
 
 .flex {
     display: flex;
+}
+
+.bad {
+    color: var(--flow-danger);
+    font-weight: 600;
 }
